@@ -125,18 +125,19 @@ CREATE TABLE IF NOT EXISTS `perfiles_det` (
   CONSTRAINT `perfiles_det_ibfk_1` FOREIGN KEY (`IdPerfil`) REFERENCES `perfiles` (`CodPerfil`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `perfiles_det_ibfk_2` FOREIGN KEY (`Menu`) REFERENCES `m_menu_emp_menj` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `perfiles_det_ibfk_3` FOREIGN KEY (`Submenu`) REFERENCES `m_menu_emp_sub_menj` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=238 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Volcando datos para la tabla fundacite-prov.perfiles_det: ~6 rows (aproximadamente)
 DELETE FROM `perfiles_det`;
 /*!40000 ALTER TABLE `perfiles_det` DISABLE KEYS */;
 INSERT INTO `perfiles_det` (`id`, `IdPerfil`, `Submenu`, `Menu`, `S`, `U`, `D`, `I`, `P`) VALUES
-	(1, 1, 110, 54, 0, 1, 1, 1, 1),
-	(113, 1, 55, 54, 0, 1, 1, 1, 1),
+	(1, 1, 110, 54, 0, 1, 1, 0, 1),
+	(113, 1, 55, 54, 1, 1, 1, 1, 1),
 	(225, 2, 110, 54, 1, 1, 1, 1, 1),
 	(226, 2, 55, 54, 1, 1, 1, 1, 1),
 	(235, 3, 160, 76, 0, 1, 0, 1, 0),
-	(237, 2, 160, 76, 1, 1, 1, 1, 1);
+	(237, 2, 160, 76, 1, 1, 1, 1, 1),
+	(240, 1, 160, 76, 1, 1, 1, 0, 1);
 /*!40000 ALTER TABLE `perfiles_det` ENABLE KEYS */;
 
 
@@ -198,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `registrados` (
   `correo` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `cedula` (`cedula`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Volcando datos para la tabla fundacite-prov.registrados: ~4 rows (aproximadamente)
 DELETE FROM `registrados`;
@@ -232,6 +233,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Cedula` int(11) NOT NULL DEFAULT '0',
   `Usuario` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `Nombres` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `Apellidos` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `contrasena` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `CodSede` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Tipo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -247,19 +250,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `Cedula_2` (`Tipo`,`Cedula`),
   KEY `Tipo` (`Cedula`,`Tipo`,`Usuario`),
   KEY `Cedula` (`Codigo`,`Usuario`,`Cedula`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Volcando datos para la tabla fundacite-prov.usuarios: ~7 rows (aproximadamente)
 DELETE FROM `usuarios`;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` (`id`, `Cedula`, `Usuario`, `contrasena`, `CodSede`, `Tipo`, `Nivel`, `Stilo`, `theme_color`, `Codigo`, `Registro`, `Fecha`, `Observacion`) VALUES
-	(9, 19191493, 'ROJASGB', 'a1b995eb2627f17bfd5fcb1de8533c62', '', 'Empleado', '1', 0, '', '7bd31', '1', '2016-11-16 09:34:10', NULL),
-	(25, 12345, 'GOD', 'a1b995eb2627f17bfd5fcb1de8533c62', NULL, 'Empleado', '2', 0, '', 'e2821', NULL, '0000-00-00 00:00:00', NULL),
-	(74, 8573655, 'laya', 'a1b995eb2627f17bfd5fcb1de8533c62', NULL, 'Empleado', '1', 0, '', '4d0ed', NULL, '0000-00-00 00:00:00', NULL),
-	(76, 21589306, 'maria', '827ccb0eea8a706c4c34a16891f84e7b', NULL, 'Empleado', '3', 0, '', '1a9f8', '1', '2017-03-09 18:57:51', NULL),
-	(82, 12345, '', '', NULL, '', NULL, 0, '', 'e2821', NULL, '0000-00-00 00:00:00', NULL),
-	(88, 19191492, 'prueba', 'c893bad68927b457dbed39460e6afd62', NULL, 'Empleado', '3', 0, '', '9a14f', '1', '2017-05-01 06:30:14', NULL),
-	(92, 19191490, 'carrito', '827ccb0eea8a706c4c34a16891f84e7b', NULL, 'Empleado', '3', 0, '', 'd7d21', '1', '2017-06-04 19:01:15', NULL);
+INSERT INTO `usuarios` (`id`, `Cedula`, `Usuario`, `Nombres`, `Apellidos`, `contrasena`, `CodSede`, `Tipo`, `Nivel`, `Stilo`, `theme_color`, `Codigo`, `Registro`, `Fecha`, `Observacion`) VALUES
+	(9, 19191493, 'ROJASGB', '', '', 'a1b995eb2627f17bfd5fcb1de8533c62', '', 'Empleado', '1', 0, '', '8ca3b', '1', '2016-11-16 09:34:10', NULL),
+	(25, 12345, 'GOD', '', '', 'a1b995eb2627f17bfd5fcb1de8533c62', NULL, 'Empleado', '2', 0, '', '0501e', NULL, '0000-00-00 00:00:00', NULL),
+	(74, 8573655, 'laya', '', '', 'a1b995eb2627f17bfd5fcb1de8533c62', NULL, 'Empleado', '1', 0, '', '4d0ed', NULL, '0000-00-00 00:00:00', NULL),
+	(76, 21589306, 'maria', '', '', '827ccb0eea8a706c4c34a16891f84e7b', NULL, 'Empleado', '3', 0, '', '1a9f8', '1', '2017-03-09 18:57:51', NULL),
+	(82, 12345, '', '', '', '', NULL, '', NULL, 0, '', '0501e', NULL, '0000-00-00 00:00:00', NULL),
+	(88, 19191492, 'prueba', '', '', 'c893bad68927b457dbed39460e6afd62', NULL, 'Empleado', '3', 0, '', '9a14f', '1', '2017-05-01 06:30:14', NULL),
+	(92, 19191490, 'carrito', '', '', '827ccb0eea8a706c4c34a16891f84e7b', NULL, 'Empleado', '3', 0, '', 'd7d21', '1', '2017-06-04 19:01:15', NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
