@@ -69,6 +69,7 @@ if (isset($_POST['user']) && isset($_POST['pass']) && ($_POST['user']!='') && ($
         $_SESSION['usuario_perfil'] = $usuario_datos['Nivel'];
         $_SESSION['usuario_stilo']=$usuario_datos['Stilo'];
         $_SESSION['tipo_usuario']=$usuario_datos['TipoUsuario'];
+        $_SESSION['codprod']=0;
     //Verificacion de los permisos de lectura escritura
     $auth['S']=1;
         $auth['I']=1;

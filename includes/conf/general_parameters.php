@@ -16,7 +16,7 @@
 
 $empresa_name   = "FUNDACITE"; // Nombre de la empresa
 $system_title   = "FUNDACITE | PROVEEDORES"; //titulo del sistema ::: TEC
-$foot_page      = ".:: Aplicaci&oacute;n Web ::: FUNDACITE - INVENTARIO ::.";
+$foot_page      = ".:: Aplicaci&oacute;n Web ::: FUNDACITE - PROVEEDORES ::.";
 $host_system    = "";
 $auth_table     = 'usuarios'; // Nombre de la tabla que contendra los datos de los usuarios
 $usuarios_sesion = 'the_name_session';

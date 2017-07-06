@@ -23,7 +23,7 @@
 		if ($consulu>0){
 			paraTodos::showMsg("Esta persona ya se encuentra registrada", "alert-danger");
 		} else{
-			paraTodos::arrayInserte("Cedula, Nombres, Apellidos, Usuario, Nivel, contrasena", "usuarios", "$cedula, '$nombre', '$apellido', '$usuario', '$tipo', '$pass'");
+			paraTodos::arrayInserte("Cedula, Nombres, Apellidos, Usuario, Nivel, contrasena, tipo", "usuarios", "$cedula, '$nombre', '$apellido', '$usuario', '$tipo', '$pass', 'Empleado'");
 		}
 	}
 	/*MOSTRAR*/

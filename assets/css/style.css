@@ -3631,3 +3631,48 @@ File: Responsive
     border-radius: 10px;
     margin-bottom: -70px;
 }
+
+#foto {
+    width: 300px;
+    z-index: 1;
+}
+
+#divfoto {
+    padding: 12px;
+    background-color: rgb(249, 249, 249);
+    width: 325px;    
+}
+
+#subirfoto {
+    margin: -40px 0 0 260px;
+    font-size: 30px;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+}
+#subirfoto:hover {
+    color: black;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 6px 16px -15px  rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 6px 16px -15px  rgba(0,0,0,0.75);
+box-shadow: 0px 6px 16px -15px  rgba(0,0,0,0.75);
+}
+
+#galeria {
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow: scroll;
+}
+
+.foto-galeria {
+    width: 150px;
+}
+
+.fondo-imagen {
+    width: 200px;
+    padding: 10px;
+    background-color: rgba(42, 50, 60, 0.18);;
+    float: left;
+}

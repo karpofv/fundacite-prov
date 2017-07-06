@@ -1,6 +1,6 @@
 <?php
-include_once 'includes/layout/head.php';
 require 'includes/conf/general_parameters.php';
+include_once 'includes/layout/head.php';
 ini_set('display_errors', false);
 ini_set('display_startup_errors', false);
 if ($_GET[logaut] == '1') {
